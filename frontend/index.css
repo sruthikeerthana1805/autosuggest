@@ -1,3 +1,25 @@
 h1 {
     color: red;
 }
+#HOME{
+    text-align: center;
+    border: 3px solid black;
+}
+#nav{
+    text-align: center;
+    background-color: purple;
+    height: 25px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+}
+#nav a{
+    margin: 0px 5px;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+#p2{
+    color:rgba(19, 9, 209, 0.811);
+}#HOME:hover{
+    background-color: rgb(210, 210, 231);
+}
