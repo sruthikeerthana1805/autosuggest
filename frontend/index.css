@@ -1,25 +1,64 @@
-h1 {
+h1{
     color: red;
 }
-#HOME{
+#home{
     text-align: center;
-    border: 3px solid black;
+    border :3px ;
+    border-color:rgb(0, 0, 0);
+    border-style: solid;
 }
-#nav{
+#p1
+{
+    color: mediumslateblue;
+
+}
+#p2
+{
+    color: green;
+}
+#home:hover{
+
+    background-color: lavender;
+}
+#nav
+{
     text-align: center;
-    background-color: purple;
+    background-color:  purple;
     height: 25px;
     padding-top: 5px;
     margin-bottom: 5px;
 }
-#nav a{
-    margin: 0px 5px;
+#nav a
+{
+    margin:0px 5px;
     text-decoration: none;
-    color: whitesmoke;
+    color:white;
+
 }
 
-#p2{
-    color:rgba(19, 9, 209, 0.811);
-}#HOME:hover{
-    background-color: rgb(210, 210, 231);
+ #card
+{
+    width: 320px;
+    margin: 20px auto;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+}
+#card-img
+{
+ align-items: center;
+ width: 300px;
+ height: 300px;
+ margin: auto;
+
+}
+img
+{
+    width:300px;
+    height: 300px;
+}
+#action
+{
+    text-align:center;
+    margin-top:10px;
 }
