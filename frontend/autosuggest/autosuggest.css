@@ -81,3 +81,9 @@ body{
     letter-spacing: 1px;
     margin-top: 20px;
 }
+#suggestion-box {
+    margin-top: 5px;
+    border:1px solid black;
+    width: 700px;
+    
+}
