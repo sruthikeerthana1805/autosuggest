@@ -69,3 +69,15 @@ body{
     font-size:20px;
     margin-left:15px;
 }
+
+.name{
+    color:purple
+}
+.tagline{
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    color: #666;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
