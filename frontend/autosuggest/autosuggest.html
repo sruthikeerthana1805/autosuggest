@@ -23,7 +23,7 @@
         <div class="right">
             <span class="online">● online</span>
             <span>🕒</span>
-            <span>- ms</span>
+            <span id="elapsed-ms">- ms</span>
         </div>
 
     </div>
@@ -39,20 +39,84 @@
             Prefix Based Auto Suggest.
         </p>
 
+        <!-- Search Box -->
         <div class="search">
 
             <span>🔍</span>
-            
+
             <input
+                id="search-box"
                 type="text"
                 placeholder="Start typing to search..."
             >
-            
+
         </div>
-        <div id="suggestion-box">
-            Suggestion box
-        </div>
+
+        <!-- Suggestions -->
+        <div id="suggestion-box"></div>
+
     </div>
+
+    <script>
+
+        var searchbox = document.getElementById("search-box");
+        var suggestionBox = document.getElementById("suggestion-box");
+        var elapsedMs = document.getElementById("elapsed-ms");
+
+        searchbox.addEventListener("input", function () {
+
+            // 1. Get user typed text
+            var query = searchbox.value.trim();
+
+            // If search box is empty
+            if (query === "") {
+                suggestionBox.innerHTML = "";
+                elapsedMs.textContent = "- ms";
+                return;
+            }
+
+            // 2. Make API call
+            fetch("https://autosuggest-backend.onrender.com/api/autosuggest?q=" +
+                query +
+                "&algorithm=brute&limit=10&weighted=false")
+
+                .then(function (response) {
+                    return response.json();
+                })
+
+                .then(function (data) {
+
+                    console.log(data);
+
+                    // Clear previous suggestions
+                    suggestionBox.innerHTML = "";
+
+                    // Show suggestions
+                    data.results.forEach(function (item) {
+
+                        var p = document.createElement("p");
+                        p.textContent = item.text;
+
+                        suggestionBox.appendChild(p);
+
+                    });
+
+                    // Update response time
+                    elapsedMs.textContent = data.elapsedMs + " ms";
+
+                })
+
+                .catch(function (error) {
+
+                    console.log(error);
+
+                    suggestionBox.innerHTML = "<p>Error loading suggestions.</p>";
+
+                });
+
+        });
+
+    </script>
 
 </body>
 
